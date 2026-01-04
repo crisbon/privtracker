@@ -1,4 +1,4 @@
-module github.com/meehow/privtracker
+module github.com/crisbon/privtracker
 
 go 1.24.0
 
