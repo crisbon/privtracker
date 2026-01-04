@@ -22,6 +22,11 @@ type AnnounceResponse struct {
 }
 
 func announce(w http.ResponseWriter, r *http.Request) {
+	passkey := r.PathValue("room")
+	if !isAllowedPasskey(passkey) {
+		http.Error(w, "invalid passkey", 400)
+		return
+	}
 	query := r.URL.Query()
 	port, err := strconv.ParseUint(query.Get("port"), 10, 16)
 	if err != nil {

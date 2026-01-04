@@ -14,6 +14,8 @@ import (
 )
 
 func main() {
+	initDB("./users.db")
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "1337"
