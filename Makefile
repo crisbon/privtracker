@@ -1,5 +1,5 @@
 build:
-	CGO_ENABLED=0 go build -ldflags="-s -w -buildid=" -trimpath
+	CGO_ENABLED=1 go build -ldflags="-s -w -buildid=" -trimpath
 
 deploy: build
 	rsync -avzL --exclude '*.gz' docs privtracker privtracker:web/
