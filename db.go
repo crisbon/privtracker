@@ -15,7 +15,6 @@ func initDB(filepath string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer db.Close()
 
 	//statement, _ := db.Prepare("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, passkey TEXT UNIQUE)")
 	//statement.Exec()
