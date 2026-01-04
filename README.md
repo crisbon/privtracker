@@ -15,7 +15,7 @@ Unlike public trackers, PrivTracker shares peers' IPs only within the group and 
 
 ### Build
 ```bash
-git clone https://github.com/meehow/privtracker.git
+git clone https://github.com/crisbon/privtracker.git
 cd privtracker
 make build
 ```
