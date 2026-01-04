@@ -85,3 +85,9 @@ services:
 volumes:
     autocert:
 ```
+
+### TODO
+
+- [ ] Fix announce logic, connect peers with different passkeys
+- [ ] Add seeding time counter
+- [ ] Change frontend
