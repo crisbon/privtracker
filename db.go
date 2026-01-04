@@ -17,8 +17,12 @@ func initDB(filepath string) {
 	}
 	defer db.Close()
 
-	statement, _ := db.Prepare("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, passkey TEXT UNIQUE)")
-	statement.Exec()
+	//statement, _ := db.Prepare("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, passkey TEXT UNIQUE)")
+	//statement.Exec()
+	_, err = db.Exec("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, passkey TEXT UNIQUE)")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func isAllowedPasskey(passkey string) bool {
