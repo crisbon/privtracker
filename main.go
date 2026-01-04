@@ -29,6 +29,11 @@ func main() {
 		fmt.Printf("PrivTracker listening on http://0.0.0.0:%s/\n", port)
 		log.Fatal(http.ListenAndServe(":"+port, handler))
 	}
+
+	err := db.Close()
+	if err != nil {
+		log.Fatal("error closing database:", err)
+	}
 }
 
 func router(middlewares ...Middleware) http.Handler {
